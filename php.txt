@@ -1,0 +1,1874 @@
+=====================>25/05/2022<======================
+ພາສາ php
+ພາສາ php ຈະມີຢູ່ ອົງປະກອບຄື
+- HTML Tag
+- PHP Tag   ແທັກເປິດ <?php   ແທັກປິດ ?>
+- ຄໍາສັ່ງຂອງ PHP
+- Whitespace
+- Comments (ຄໍາອະທິບາຍໂຄດ)
+
+		HTML ລວ່ມກັບ PHP
+<html>
+<head>
+	<title> PHP <title>
+</head>
+<body>
+	<p> html </p>
+<?php
+	echo "<h2> ສະແດງຜົນທາງຈໍພາບ </h2>";
+	phpinfo(); // ສະແດງລາຍລະອຽດຂອງ PHP
+?>
+</body>
+</html>
+
+	print() ແລະ echo()
+
+	ເປັນ function ທີ່ໃຊ້ໃນການສະແດງຂໍ້ມູນຜ່ານ Browser ຍົກຕົວຢ່າງເຊັ້ນ:
+- print "Saiyalad";
+- echo "Saiayald";
+
+ຕົວຢ່າງ:
+ <style>
+        h1{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP ລ່ວມກັບ HTML</h1>
+    <?php
+        // ການໃຊ້ echo
+        echo "Saiyalad";
+        echo "<h1>ສອນ ພາສາ PHP</h1>" //ສາມາດໃສແທັກຂອງພາສາ HTML ໄດ້
+
+        // ການໃຊ້ print
+        print("Saiyalad print");
+    ?>
+
+        <!-- ການນຳໃຊ້ກັບ ແບບຟ້ອນ -->
+        <form action="">
+            <label for="">fname</label>
+            <input type="text" name="" id="" value="<?php echo "ໄຊຍະລາດ" ?>">
+            <label for="">lname</label>
+            <input type="text" name="" id="" value=" <?php echo "ພຽນສອນ" ?>">
+        </form>
+
+
+	print() ແລະ echo() ຕ່າງກັນແບບໃດ
+1 print ມີການສົ່ງກັບມາ (return) ແຕ່ echo ຈະບໍ່ມີການສົ່ງຄ່າກັບມາ (void)
+2 print ສາມາດລະບຸຄ່າໄດ້ຕົວດຽວ ແຕ່ echo ມີໄດ້ຫຼາຍຕົວ
+3 echo ໄວກວ່າ print
+
+		ຕົວປ່ຽນ ຫຼຶ ຕົວແປ (Variables)
+	ໃຊ້ສຳລັບເກັບຂໍ້ມູນໃນໜ່ວຍຄວາມຈຳເພຶອໃຊ້ປະມວນຜົນ ເຊັ່ນ ຕົວເລກ ຕົວອັກສອນ ຫຼຶ ຊຸດຂໍ້ຄວາມ ຫຼຶ ກຸ່ມຂອງຂໍ້ມູນ (Array)
+	ການນິຍາມຕົວປຽນ
++ ໂຄງສ້າງ 
+$ ຊື່ຕົວປ່ຽນ = ຄ່າຂອງຕົວປ່ຽນ
+
+ເຊັ່ນ: 
+$name = "Saiyalad"
+$age = 20;
+$year = $age;
+	ໃຫ້ນຳຄ່າທາງຂວາມຶຂອງເຄືອງໜາຍ = ໄປເກັບໄວໃນຕົວປຽນທີ່ຢູ່ດ້ານຊ້າຍມຶ
+	ກົດຂອງການຕັ້ງຊື່ຕົວປ່ຽນ
+1 ສາມາດເປັນໄດ້ທັງຕົວອັກສອນ ຕົວເລກ ສັນຍາລັກ_(underscores) ແລະ $(dollar sign)
+2 ອັກສອນຕົວແລກຫ້າມເປັນຕົວເລກ
+3 Case Sensitive ຕົວພິມນ້ອຍ - ພິມໃຫຍ່ ມີຄວາມໜາຍຕ່າງກັນ
+4 ບໍ່ຊ້ໍາກັບ built-in function (ຟັງຊັນມາດຕະຖານໃນ PHP)
+5 ຕົວປ່ຽນຂື້ນຕົວດວ້ຍ $(dollar sign)
+6 ຕົວປ່ຽນບໍ່ສາມາດເວັນວ່າງ ຫຼຶ ເຄາະເວັນວັດໄດ້
+
+ຕົວຢ່າງ:
+<?php
+$name = "Saiyalad";
+$age = 15;
+
+
+echo $name;
+echo "<br>";
+echo $age."<br>";
+
+echo "ອາຍຸ".$age+20;
+?>
+
+		ຊະນິດຂໍ້ມູນຂອງຕົວປ່ຽນ
+ຂໍ້ມູນພື້ນຖານ:
+1. integer ຄືເລກຈຳນວນເຕັມເຊັ່ນ 1,2,3...(ຖານ 10, 8, 16) ເປັນຕົນ
+2. Float/Double ຄືເລກຈຳນວນຈິງ ເຊັ່ນ: 1.23, 3.14, ... ເປັນຕົ້ນ
+3. Boolean ຄືຂໍ້ມູນທາງຕັກກະສາດມີຄ່າ ຄວາມຈິງ (True), ບໍ່ແມ່ນຄວາມຈິງ(False)
+ຂໍ້ມູນໂຄງສ້າງ:
+4. String ຄືຕົວອັກສອນ ຫຼຶ ຊຸດຂໍ້ຄວາມຂຽນພາຍໃນເຄືອງໜາຍ " "
+5. Array ຄືຊຸດ ຫຼຶ ກຸ່ມຂອງຂໍ້ມູນທີ່ມີຊະນິດຂໍ້ມູນດຽວກັນ
+6. Object ຄືການກຳນົດໃຫ້ຕົວປ່ຽນນັ້ນເກັບຄຸນສົມບັດຂອງ Object (Attribute & Method) ໂດຍການປະກາດໃຊ້ງານຜ່ານ Class (OOP)
+
+	ການສະແດງຊະນິດຂໍ້ມູນຂອງຕົວປ່ຽນ
+gettype() ດຶງ, settype() ກຳນົດ
+
+ເຊັ່ນ $total = 3.14;
+echo gettype($total);
+settype($total);
+echo gettype($total);
+
+ຕົວຢ່າງ:
+
+<?php
+$price = 50; // integer
+$scord = 90.8; // double
+
+$name = "Saiyalad"; // string
+$isvalid = false; // boolean
+
+$price = $price+100; // 50+100 => price
+
+// ການດືງຕົວປ່ຽນມາສະແດງ
+echo $name."<br>";
+echo $isvalid."<br>";
+echo $price."<br>";
+echo $scord."<br>";
+
+echo "<hr>";
+
+// ການດືງຕົວປ່ຽນ ແລະ ບອກປະເພດຂໍ້ມູນ
+echo gettype($name)."<br>";
+echo gettype($isvalid)."<br>";
+
+echo "<hr>";
+// ການກຳນົດຕົວປ່ຽນ ຫຼຶ ປ່ຽນປະເພດຂໍ້ມູນ
+echo "ຫຼັງປ່ຽນ = ".gettype($scord)."<br>";
+
+settype($scord,"integer");
+echo "ຫຼັງປ່ຽນ = ".gettype($scord)."<br>";
+
+?>
+
+		Type Casting
+	Casting ຄື ການປ່ຽນຊະນິດຂອງຂໍ້ມູນໃຫ້ເປັນຊະນິດທີ່ຕ້ອງການ ໂດຍໃສຊະນິດຂໍ້ມູນຂອງຕົວປ່ຽນໄວ້ໃນວົງເລັບໜ້າຕົວປ່ຽນທີ່ຕ້ອງການຈະປ່ຽນຊະນິດຂອງຂໍ້ມູນ
+		ເຊັ່ນ:
+$a = 10.5;		$a = (integer)$a;
+$b = 20.3;		$b = (integer)$b;
+$c = $a + $b;	$c = $a + $b;
+echo $c;		echo $c;
+
+ຕົວຢ່າງ:
+<?php
+$price = 100.17;
+$dalivery = 50.99;
+
+$total = $price + $dalivery;
+
+echo "ກ່ອນແປງ = ". gettype($total)."<br>";
+echo $total . "<br>";
+
+// type casting
+$total = (integer)$total;
+echo "ຫຼັງແປງ = " . gettype($total)."<br>";
+echo $total . "<br>";
+?>
+
+	ຄ່າຄົງທີ່ (Constant)
+ການສ້າງຕົວປ່ຽນທີ່ເກັບຂໍ້ມູນທີ່ບໍ່ສາມາດປ່ຽນແປງຄ່າໄດ້
+
+define(ຊື່ຕົວປ່ຽນ, ຄ່າທີ່ກຳນົດ)
+
+ເຊັ່ນ:
+define(title, "Saiyalad");
+define(pi,3.14);
+
+ຕົວຢ່າງ:
+
+<?php
+
+define("PI" , 3.14);
+
+
+$radius = 6;
+$area = PI * 6*6;
+
+echo "ພຶນທີ່ວົງກົມ = " .$area."ຕາລາງກິໂລແມັດ";
+
+?>
+
+		ຟັງຊັນທີ່ເຮັດວຽກກ່ຽວກັບຕົວປ່ຽນ
+- isset ຄືຟັງຊັນສຳຫຼັບກວດສວບວ່າຕົວປ່ຽນມີການກຳນົດຄ່າຫຼຶ ບໍ່ ຖ້າກຳນົດຈະມີຄ່າເປັນ True (1) ຖ້າບໍ່ກຳນົດຈະມີຄ່າເປັນ False
+- unset ຍົກເລີກຕົວປ່ຽນ ແລະ ຄືນຄ່າໃຫ້ໜ່ວຍຄວາມຈຳ
+- empty ຟັງຊັນສຳລັບກວດສວບວ່າຕົວປ່ຽນມີຄ່າວ່າງ ຫຼຶ ເລກ 0 ຫຼຶ ບໍ ຖ້າເປັນຄ່າວ່າງຈະເປັນ True (1) ຖ້າບໍ່ເປັນຄ່າວ່າງຈະເປັນ False
+- is_null ຟັງຊັນສຳຫຼັບກວດສວບວ່າຕົວປ່ຽນມີຄ່າວ່າ ຫຼຶ ບໍ
+- print_r() ຟັງຊັນສຳຫຼັບສະແດງຄ່າຕົວປ່ຽນ array
+- var_dump() ສະແດງລາຍລະອຽດຕົວປ່ຽນ
+
+<?php
+$total1 = null;
+$total2 = "";
+$total3 = 0;
+$total4 = "Saiyalad";
+
+ຕົວຢ່າງ:
+echo "ຕົວປ່ຽນ total1 = ".isset($total1)."<br>";
+echo "ຕົວປ່ຽນ total2 = ".isset($total2)."<br>";
+echo "ຕົວປ່ຽນ total3 = ".isset($total3)."<br>";
+echo "ຕົວປ່ຽນ total4 = ".isset($total4)."<br>";
+?>
+
+		ຕົວປ່ຽນ Superglobal
+ເປັນຕົວປ່ຽນທີ່ຮັບຄ່າຕົວປ່ຽນຈາກ browser ກັບ server
+- $GLOBALS ເປັນການປະກາດໃຫ້ເປັນຕົວປ່ຽນ global ເພືອໃຫ້ທຸກສ່ວນສາມາເອີນໃຊ້ງານໄດ້ເລີຍ
+- $_SERVER ເກັບຄ່າຕ່າງໆຂອງ web server ທີ່ກຳລັງເຮັດວຽກຢູ່
+- $_GET ເປັນຕົວປ່ຽນແບບ Array ໃຊ້ເກັບຄ່າທີ່ສົ່ງມາກັບ UBL
+- $_POST ໃຫ້ເກັບຄ່າທີ່ສົ່ງມາກັບ Form ແບບ post method
+- $ENV ຕົວປ່ຽນທີ່ຈັດເກັບສະພາບແວດລ້ວມທົ່ວໄປ ແລະ ຄ່າຕ່າງໆຂອງ SERVER
+- $_SESSION ເກັບຕົວປ່ຽນ session
+- $_COOKIE ເກັບຕົວປ່ຽນ cookie
+
+ຕົວຢ່າງ ການໃຊ້ Superglobal
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superglobal</title>
+</head>
+<body>
+    <?php
+    // PHP Superglobal
+
+    /**
+     * $GLOBALS
+     * $_SERVER
+     * $_REQUEST
+     * $_POST
+     * $_GET
+     * $_FILES
+     * $_ENV
+     * $_COOKIE
+     * $_SESSION
+     */
+    ?>
+    <?php
+    //ການໃຊ້ $GLOBALS
+    $x = 10;
+    $y = 20;
+
+        function addition() {
+            $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+        }
+        addition();
+        echo $z . "<hr>";
+    ?>
+
+    <?php
+        // ການໃຊ້ $_SERVER
+        echo $_SERVER['PHP_SELF'] . "<br>";
+        echo $_SERVER['SERVER_NAME'] . "<br>";
+        echo $_SERVER['HTTP_HOST'] . "<br>";
+        echo $_SERVER['HTTP_USER_AGENT'] . "<br>";
+        echo $_SERVER['SCRIPT_NAME'] . "<hr>";
+        ?>
+
+        <?php
+        // ການໃຊ້ $_REQUEST
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $name = $_REQUEST['fname'];
+            if(empty($name)) {
+                echo "Name is empty";
+            } else {
+                echo $name;
+            }
+        }
+        ?>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        Name : <input type="text" name="fname">
+        <input type="submit">
+        </form>
+        <hr>
+
+
+        <!-- $_GET -->
+        <form action="Super_get.php" method="get">
+            Name : <input type="text" name="name">
+            <br>
+            Email : <input type="text" name="email">
+            <br>
+            <input type="submit">
+        </form>
+        <hr> 
+        <!-- $_POST -->
+        <form action="Super_post.php" method="post">
+            Name : <input type="text" name="name">
+            <br>
+            Email : <input type="text" name="email">
+            <br>
+            <input type="submit">
+        </form>
+        <hr>
+
+        <!-- $_SESSION -->
+        <?php session_start(); ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <?php $_SESSION['name'] = "ໄຊຍະລາດ";
+                    $_SESSION['lname'] = "ພຽນສອນ";
+             ?>
+        </body>
+        </html> 
+</body>
+</html>
+
+
+ຟາຍຂອງ Super_session
+<?php session_start(); 
+    echo "ຊື່" . $_SESSION['name'];
+    echo "ນາມສະກຸນ" . $_SESSION['lname'];
+    ?>
+
+    ຟາຍຂອງ Super_post
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Welcome <?php echo $_POST["name"]; ?>
+    <br>
+    Your email address is <?php echo $_POST["email"] ?>
+</body>
+</html>
+
+ຟາຍຂອງ Super_get
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test GET</title>
+</head>
+<body>
+    Welcome <?php echo $_GET["name"]; ?>
+    <br>
+    Your email address is <?php echo $_GET["email"] ?>
+    ຖ້າກໍລະນີ້ສົ່ງຂໍ້ມູນທີ່ສຳຄັນ ເຊັ່ນລະຫັດຜ່ານ ຈະບໍ່ແນະນຳໃຫ້ໃຊ້ get ປ່ຽນໃຫ້ໃຊ້ post ຈະດີແລະປອດໄພກວ່າ
+</body>
+</html>
+
+
+		ຕົວດຳເນີນການ (Operator)
+ກຸ່ມຂອງເຄືອງໜາຍ ຫຼຶ ສັນຍາລັກທີ່ໃຊ້ໃນການຂຽນໂປຣແກຣມ
+		A+B
+ເຊັນ: 	A ແລະ B ຄຶຕົວຖຶກດຳເນີນການ
+	+ ຄືຕົວດໍາເນີນການ
+
+1. ຕົວດໍາເນີນການ (Opertor)
+2. ຕົວຖຶກດໍາເນີນການ (Opertor)
+ຕົວຢ່າງ:
+<?php
+$a = 10;
+$b = 2;
+
+echo $a. " +" . $b . " = ".($a+$b)."<br>";
+echo $a. " -" . $b ." = ".($a-$b)."<br>";
+echo $a. " *" . $b ." = ".($a*$b)."<br>";
+echo $a. " /" . $b ." = ".($a/$b)."<br>";
+echo $a. " %" . $b ." = ".($a&$b)."<br>";
+
+?>
+
+		ຕົວດຳເນີນການປ່ຽບທ່ຽບ
+==		ເທົ່າກັບ
+===		ຄືກັນ
+!=		ບໍ່ເທົ່າກັບ
+<>		ບໍ່ເທົ່າກັບ
+===!		ບໍ່ຄືກັນ
+>		ຫຼາຍກວ່າ
+<		ນ້ອຍກວ່າ
+>=		ຫຼາຍກວ່າເທົ່າກັບ
+<=		ນ້ອຍກວ່າເທົ່າກັບກ 
+<=>		spaceship (php7)
+
+ຕົວຢ່າງ:
+<?php
+$a = 500;
+$b = 500;
+
+var_dump($a == $b);
+var_dump($a === $b);
+/* 
+<=>
+
+a,b
+
+ຖ້າ a<b = -1
+ຖ້າ a>b = 0
+ຖ້າ a=b = 1
+*/
+
+var_dump($a <=> $b);
+
+		ຕົວດຳເນີນການກັບຂໍ້ຄວາມ (String)
+1. .(concatenation) ການຕໍ່ຂໍ້ຄວາມ
+2. .= ຕໍ່ຂໍ້ຄວາມ ແລະ ກໍານົດຄ່າ
+
+ຕົວຢ່າງ:
+<?php
+$name = "Saiyalad";
+
+echo $name . "PH"."<br>"; // ຕໍ່ຂໍ້ຄວາມສະເພາະຖັນນີ້
+$name.="PH"; // ນຳຂໍ້ຄວາມມາຕໍ່ກັນແລ້ວ ເກັບລົງໃນຕົວປ່ຽນ
+echo $name;
+
+?>
+
+		ຕົວດຳເນີນການເພິ່ມຄ່າ ແລະ ລົດຄ່າ
+operator		ຮູບແບບການຂຽນ		ຄວາມໜາຍ
+++(Prefix)	++a			ເພິ່ມຄ່າໃຫ້ a ກອ່ນ 1 ຄ່າແລ້ວນໍາໄປໃຊ້
+++(Postfix)	a++			ນຳຄ່າປັດຈຸບັນໃນ a ໄປໃຊ້ກອ່ນແລ້ວຄ່າເພິ່ມຄ່າ
+--(Prefix)		--a			ລົດຄ່າໃຫ້ b ກອ່ນ 1 ຄ່າແລ້ວນໍາໄປໃຊ້
+--(Postfix)		b--			ນຳຄ່າປັດຈຸບັນໃນ b ໄປໃຊ້ກ່ອນແລ້ວ ຄ່ອຍລົດຄ່າ
+
+ຕົວຢ່າງ:
+<?php
+$a = 5;
+$b = 10;
+
+
+// ເພິ່ມຄ່າແບບ prefix
+echo "ຄ່າເລິ່ມຕົ້ນ = ".$a."<br>";
+echo "ເພິ່ມຄ່າ ແບບ prefix = ".(++$a)."<br>";
+echo "ຄ່າລ່າສຸດ = ".($a)."<br>";
+
+// ເພິ່ມຄ່າແບບ postfix
+echo "<hr>";
+echo "ຄ່າເລິ່ມຕົ້ນ = ".$b."<br>";
+echo "ເພິ່ມຄ່າ ແບບ prefix = ".($b++)."<br>";
+echo "ຄ່າລ່າສຸດ = ".($b)."<br>";
+?>
+
+		Compound Assignment
+Assignment	ຮຸບແບບການຂຽນ	ຄວາມໜາຍ
++=		x+=y		x=x+y
+-=		x-=y		x=x-y
+*=		x*=y		x=x*y
+/=		x/=y		x=x/y
+%=		x%=y		x=x%y
+
+ຕົວຢ່າງ:
+<?php
+$x = 10;
+$y = 5;
+
+$x+=$y; // $x = $x+$y;
+echo $x
+?>
+
+		ດຳລັບຄວາມສຳຄັນຂອງຕົວດຳເນີນການ
+ລຳດັບທີ່		ເຄືອງໜາຍ		ລຳດັບການເຮັດວຽກ
+1		new		ບໍ່ມີຄວາມສຳພັນ
+2		()		ບໍ່ມີຄວາມສຳພັນ
+3		[]		ບໍ່ມີຄວາມສຳພັນ
+4		++ , --		ຊ້າຍໄປຂວາ
+5		* , / , %		ຊ້າຍໄປຂວາ
+6		+ , -		ຊ້າຍໄປຂວາ
+7		< , <= , > , >=	ຊ້າຍໄປຂວາ
+8		== , != , === , <>	ບໍ່ມີຄວາມສຳພັນ
+9		&& , ||		ຊ້າຍໄປຂວາ
+10	= , += , -= , *= , /=		ຂວາໄປຊາຍ
+
+ຕົວຢ່າງ:
+<?php
+$x = 5+8*9;
+$y = 10-4+2;
+$g = 10-(2+1);
+$h = 5*2-40/5;
+$l = 7+8/2+25;
+
+echo $x."<br>";
+echo $y."<br>";
+echo $g."<br>";
+echo $h."<br>";
+echo $l."<br>";
+?>
+
+			ຕົວດຳເນີນການອືນໆ
+- comma (,) ຄັ່ນ argument ສຳຫຼັບຮັບສົ່ງຄ່າໃນຟັງຊັນ ຫຼຶ ສະມາຊິກໃນ array
+- operator ພິເສດ ເຊັ່ນ -> , new ສຳຫຼັບການສ້າງ class (oop)
+- array operator
+- Execution Operator ແທນດວ້ຍສັນຍະລັກ `` (backticks) ສຳຫຼັບໃສຄຳສັ່ງ command line server
+- Error Suppression Operator (@) ສ່ວນທີ່ໃຫ້ໂປຣແກຣມເບິ່ງຂ້າມກໍລະນີ້ທີ່ມີຂໍ້ຜິດພາດເກີດຂື້ນ 
+
+	ໂຄງສ້າງຄວບຄູມ (Control Structure)
+ຄື ກຸ່ມຄຳສັ່ງທີ່ໃຊ້ຄວບຄຸມການເຮັດວຽກຂອງໂປຣແກຣມ
+
++ ແບບລໍາດັບ (Sequence)
++ ແບບມີເງືອນໄຂ (Condition)
+	ກຸ່ມຄຳສັ່ງທີ່ໃຊ້ຕັດສິນໃຈໃນການເລືອກເງືອນໄຂຕ່າງໆ ພາຍໃນໂປຣແກຣມມາເຮັດວຽກ
+	- if 
+		ເປັນການກຳນົດຄຳສັ່ງແບບເງືອນໄຂດຽວ
+		if satement
+			ເປັນຄຳສັ່ງທີ່ໃຊ້ໃນການຕັດສິນໃຈເຮັດວຽກຂອງໂປຣແກຣມຖ້າເງືອນໄຂເປັນຈິງຈະເຮັດຕາມຄຳສັ່ງຕ່າງໆ 		ທີ່ກຳນົດພາຍໃຕ້ເງືອນໄຂນັ້ນໆ
+		ຮູບແບບ:
+	if(ເງືອນໄຂ){
+		ຄຳສັ່ງເມືອເງືອນໄຂເປັນຈິງ;
+	}
+	ຕົວຢ່າງ:
+<?php
+    $balnace = 500;
+
+    if($balnace>0){
+        echo "ສາມາດກົດເງີນໄດ້ <br>";
+    }
+    echo "ຈົບໂປຣແກຣມ";
+
+?>
+		ຮຸບແບບ:
+	if(ເງືອນໄຂ){
+		ຄຳສັ່ງເມືອເງືອນໄຂເປັນຈິງ;
+	} else {
+		ຄຳສັ່ງເມືອເງືອນໄຂບໍ່ເປັນຄວາມຈິງ;
+	}
+	ຕົວຢ່າງ:
+<?php
+    $balnace = 500;
+
+    if($balnace>0){
+        echo "ສາມາດກົດເງີນໄດ້ <br>";
+    } else{
+        echo "ບໍ່ສາມາດກົດເງີນໄດ້ <br>";
+    }
+    echo "ຈົບໂປຣແກຣມ";
+
+?>
+
+	- Switch..Case
+
++ ແບບເຮັດຊໍ້າ (Loop)
+
+		ຕົວດຳເນີນການທາງຕັກກະສາດ
+Operator		ຄຳອະທິບາຍ
+&&		AND
+||		OR
+!		NOT
+and		ຄືກັບ && ແຕ່ລຳດັບຄວາມສຳຄັນນ້ອຍກວ່າ
+or		ຄືກັບ || ແຕ່ລຳດັບຄວາມສຳຄັນນ້ອຍກວ່າ
+not		ຄືກັບ ! ແຕ່ລຳດັບຄວາມສຳຄັນນ້ອຍກວ່າ
+
+ຕົວຢ່າງ:
+<?php
+    $balnace = 1000;
+    $withderaw = 500;
+
+    if($withderaw<=$balnace && $withderaw>0){
+        echo "ສາມາດກົດເງີນໄດ້ <br>";
+        $balnace-=$withderaw;
+        echo "ຈຳນວນເງີນຄົງເຫຼຶອ = ".$balnace."<br>";
+    } else{
+        echo "ບໍ່ສາມາດກົດເງີນໄດ້ <br>";
+    }
+    echo "ຈົບໂປຣແກຣມ";
+
+?>
+
+	ການກຳນົດເງືອນໄຂແບບຫຼາຍເງືອນໄຂ
+if(ເງືອນໄຂທີ່ 1){
+	ຄຳສັ່ງເມືອເງືອນໄຂທີ່ 1 ເປັນຄວາມຈິງ;
+	}
+if(ເງືອນໄຂທີ່ 2){
+	ຄຳສັ່ງເມືອເງືອນໄຂທີ່ 2 ເປັນຄວາມຈິງ;
+	}
+if(ເງືອນໄຂທີ່ 3){
+	ຄຳສັ່ງເມືອເງືອນໄຂທີ່ 3 ເປັນຄວາມຈິງ;
+	} else{
+		ຄຳສັ່ງເມືອເງືອນໄຂທຸກອັນບໍ່ເປັນຄວາມຈິງ;
+		}
+ຕົວຢ່າງ:
+<?php
+$score = 50;
+$grade = "";
+if($score>=80){
+    $grade = "B";
+}
+if($score>=60){
+    $grade = "C";
+}
+if($score>=50){
+    $grade = "D";
+}else{
+    $grade = "F";
+}
+
+echo "ຄະແນນຄື: ".$score. "ເກດ".$grade;
+?>
+	ການຂຽນ if..else ແບບສັ້ນ (Ternary Operator)
+
+	(ເງືອນໄຂ)? ຄໍາສັ່ງເມືອເງືອນໄຂເປັນຈິງ : ຄໍາສັ່ງເມືອເງືອນໄຂບໍ່ເປັນຄວາມຈິງ;
+ຕົວຢ່າງ:
+<?php
+$a = 10;
+$b = 5;
+
+($a>$b) ? print($a. "ຫຼາຍກວ່າ".$b."<br>") : print($b."ນ້ອຍກວ່າ".$a."<br>");
+
+?>
+
+		ແບບມີເງືອນໄຂ (Condition)
+	ກຸ່ມຄຳສັ່ງທີ່ໃຊ້ຕັດສິນໃຈໃນການເລືອກເງືອນໄຂຕ່າງໆ ພາຍໃນໂປຣແກຣມມາເຮັດວຽກເ
+		+ Switch..Case
+	Switch ເປັນຄຳສັ່ງທີ່ໃຊ້ກຳນົດເງືອນໄຂຄ້າຍໆກັບ if ແຕ່ຈະເລືອກພຽງ ໜຶ່ງທາງເລືອກອອກມາທຳງານໂດຍນຳຄ່າໃນຕົວປ່ຽນມາກຳນົດເປັນທາງເລືອກຜ່ານຄຳສັ່ງ case
+
++ ຮູບແບບ
+	switch(ສິ່ງທີ່ຕ້ອງການກວດສວບ){
+	case ຄ່າທີ່ 1: ຄໍາສັ່ງທີ່1;
+		break;
+	case ຄ່າທີ່ 2: ຄໍາສັ່ງທີ່2;
+		break;
+	case ຄ່າທີ່ 3: ຄໍາສັ່ງທີ່3;
+		break;
+	.................
+	default: ຄຳສັ່ງເມືອບໍ່ມີຄ່າທີຕົງກັບທີ່ລະບຸກໃນ case
+	}
+ຕົວຢ່າງ:
+<?php
+$number = 2;
+
+switch($number){
+    case 1: echo "ເລກ1";
+        break;
+    case 2: echo "ເລກ2";
+        break;
+    case 3: echo "ເລກ3";
+        break;
+    default: echo "ບໍ່ມີເລກນີ້";
+}
+?>
+	
+		ແບບເຮັດຊ້ຳ (Loop)
+	ກຸ່ມຄຳສັ່ງທີ່ໃຊ້ໃນການລວບລວມ (loop) ໂປຣແກຣມຈະເຮັດວຽກໄປເລືອຍໆຈົນກວ່າເງືອນໄຂຈະບໍ່ເປັນຄວາມຈິງ ຈືງຈະຫຍຸດເຮັດວຽກ
+- while
+- for
+- Do..While
+
+		ຄຳສັ່ງ While
+	ຈະເຮັດວຽກຕາມຄຳສັ່ງພາຍໃນ while ໄປເລືອຍໆ ເມືອເງືອນໄຂທີ່ກຳນົດເປັນຈິງ
+while(ເງືອນໄຂ){
+	ຄຳສັ່ງທີ່ຈະເຮັດຊ້ຳເມືອເງືອນໄຂເປັນຈິງ;
+	}
+
+ຕົວຢ່າງ:
+<?php
+$count = 1;
+$limit = 10;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ລາຍການ</h1>
+            <select name="" id="">
+                <?php while ($count<=$limit){?>
+                    <option value="<?php echo $count;?>">ລາຍການ<?php echo $count;?></option>
+                    <?php 
+                    $count++;
+                }
+                    ?>
+            </select>
+        </ul>
+    </ul>
+</body>
+</html>
+
+		ຄຳສັ່ງ For
+	ເປັນຮູບແບບທີ່ໃຊ້ໃນການກວດສວບເງືອນໄຂ ມີການກຳນົດຄ່າເລິ່ມຕົ້ນ ແລະ ປ່ຽນຄ່າໄປພວ້ມໆກັນ ເມືອເງືອນໄຂໃນຄຳສັ່ງ for ເປັນຈິງກໍຈະເຮັດວຽກຕາມຄຳສັ່ງທີ່ສະແດງໄວ້ພາຍໃນຄຳສັ່ງ for ໄປເລືອຍໆ
+	+ຮູບແບບ
+for(ຄ່າເລິ່ມຕົ້ນຂອງຕົວປ່ຽນ; ເງືອນໄຂ; ປ່ຽນແປງຄ່າຕົວປ່ຽນ) {
+	ຄຳສັ່ງເມືອເງືອນໄຂເປັນຈິງ;
+	}
+		
+ເຊັ່ນ:		for($i = 1; $i<=;$i++){
+		ຄຳສັ່ງເມືອເງືອນໄຂເປັນຈິງ;
+		}
+ຕົວຢ່າງ:
+<?php
+
+for($i = 1;$i <= 10;$i++){
+    echo $i;
+}
+?>
+
+		ຄຳສັ່ງ Do..While
+	ໂປຣແກຣມຈະເຮັດວຽກຕາມຄຳສັ່ງຢ່າງນ້ອຍ 1 ຮວບ ເມືອເຮັດວຽກແລ້ວຈະມາກວດສວບເງືອນໄຂທີ່ຄຳສັ່ງ while ຖ້າເງືອນໄຂເປັນຄວາມຈິງຈະວົນກັບຂື້ນໄປເຮັດວຽກທີ່ຄຳສັ່ງໃຫມ່ອີກຮວບ ແຕ່ຖ້າບໍ່ເປັນຄວາມຈິງຈະຫລຸດອອກຈາກ ລູບ(loop)
+	do{
+	ຄຳສັ່ງຕ່າງໆ ເມືອເງືອນໄຂເປັນຈິງ;
+	} while(ເງືອນໄຂ);
+ຕົວຢ່າງ:
+<?php
+$num = 1;
+$ber = 5;
+do{
+echo "ຮອບທີ່ = ".$num."<br>";
+$num++;
+}while($num<=$ber);
+
+?>
+
+		ຂໍ້ແຕກຕ່າງ ແລະ ການໃຊ້ງານ loop
++ for ໃຊ້ໃນກໍລະນີຮູ້ຈຳນວນທີ່ຊັດເຈນ
++ while ໃຊ້ໃນກໍລະນີທີ່ບໍ່ຮູ້ຈຳນວນຮວບ
++ do..while ໃຊ້ໃນກໍລະນີທີ່ຢາກໃຫ້ລອງເຮັດກ່ອນ 1 ເທືອ ແລ້ວເຮັດຊ້ຳໄປເລືອຍໆຈົນກວ່າເງືອນໄຂເປັນຄວາມຈິງ
+
+		ຄຳສັ່ງທີ່ກ່ຽວຂ້ອງກັບ loop
++ break ຖ້າໂປຣແກຣມພົບຄຳສັ່ງນີ້ຈະຫຼຸດຈາກການເຮັດວຽກໃນລູບທັນທີ ເພືອ ໄປເຮັດຄຳສັ່ງອືນທີ່ຢູ່ນອກ ລຸບ
++ continue ຄຳສັ່ງນີ້ຈະເຮັດໃຫ້ຍູດການເຮັດວຽກແລ້ວຍ້ອນກັບໄປເລິ່ມຕົ້ນການເຮັດວຽກທີ່ຕົ້ນລູບໃຫມ່
++ exit ຄຳສັ່ງໃຫ້ໂປຣແກຣມຍູດເຮັດວຽກ (ໃຊ້ໃນກໍລະນີ້ມີຂໍ້ຜິດພາດເກິດຂື້ນໃນໂປຮແກຣມ ຈະອອກຈາກການເຮັດວຽກຂອງໂປຣແກຣມທັ້ງໜົດ)
+ຕົວຢ່າງ:
+<?php
+for($i = 1; $i<=10;$i++){
+    echo $i."<br>";
+    if($i==5){
+        break;
+    }
+
+}
+for($j = 1; $j<=10;$j++){
+    echo $j."<br>";
+    if($j==5){
+        continue;
+    }
+
+}
+for($k = 1; $k<=10;$k++){
+    echo $k."<br>";
+    if($k==5){
+        continue;
+    }
+    exit;
+    echo "ຈົບໂປຣແກຣມ";
+
+}
+
+?>
+
+		ຟັງຊັນໃນພາສາ PHP (function PHP)
+ຄວາມໜາຍທີ່ 1 :
+	ຊຸດຄຳສັ່ງທີ່ນຳມາຂຽນຮວມກັນເປັນກູ່ມເພືອໃຫ້ເອີນໃຊ້ງານຕາມວັດຖຸປະສົງທີ່ຕ້ອງການ ແລະ ລົດຄວາມຊ້ຳຊ້ອນຂອງຄຳສັ່ງທີ່ໃຊ້ງານຫຼາຍໆ ຟັງຊັນສາມາດນຳໄປໃຊ້ງານໄດ້ທຸກບ່ອນ ແລະ ແກ້ໄຂໄດ້ໃນພາຍຫຼັງ ເຮັດໃຫ້ໂຄ້ດໃນໂປຮແກຣມມລະບຽບ ແລະ ໃຊ້ງານໄດ້ສະດວກຫຼາຍຂື້ນ
+ຄວາມໜາຍທີ່ 2 :
+	ໂປຣແກຣມຍ່ອຍທີ່ນຳເຂົ້າມາເປັນສວ່ນໜຶງຂອງໂປຣແກຣມຫຼັກ ເພືອໃຫ້ສາມາດເອີນໃຊ້ງານໄດ້ໂດຍບໍ່ຈຳເປັນຕ້ອງຂຽນໂຄດຄຳສັ່ງໃໝ່ທັ້ງໜົດ
+		ຊະນິດຂອງຟັງຊັນ
+- ຟັງຊັນມາດຕະຖານ (Built-In Function) ຄື ຟັງຊັນທີ່ມີຢູ່ໃນພາສາ PHP ຜູ້ໃຊ້ສາມາດເອີນໃຊ້ງານໄດ້ເລີຍ
+- ຟັງຊັນທີ່ຜູ້ໃຊ້ສ້າງຂື້ນມາເອງ (User-Define Function) ຄື ຟັງຊັນທີ່ຖືກສ້າງຂື້ນມາເພືອວັດຖຸປະສົງໃຫ້ເຮັດວຽກຕາມທີ່ຜູ້ໃຊ້ຕ້ອງການ
+		ກົດໃນການສ້າງຟັງຊັນ
+- ຊື່ຟັງຊັນຕ້ອງບໍ່ຊ້ໍາກັນ
+- ຊື່ຟັງຊັນສາມາດເປັນຕົວອັກສອນ ຕົວເລກ ຫຼຶ ຂີດເສັ້ນລຸ່ມ (underscores)
+- ຊື່ຟັງຊັນຕ້ອງບໍ່ຂື້ນຕົ້ນດວ້ຍຕົວເລກ
+		ຮູບແບບການສ້າງຟັງຊັນ
+1. ຟັງຊັນທີ່ບໍ່ມີການຮັບ ແລະ ສົ່ງຄ່າ
+	function ຊື່ຟັງຊັນ(){
+		// ຄໍາສັ່ງຕ່າງໆ
+	}
+	ການເອີນໃຊ້ງານຟັງຊັນ
+		ຊື່ຟັງຊັນ ();
+ຕົວຢ່າງ
+<?php
+function show(){
+    print("Hello PHP");
+    print("<br>");
+}
+show();
+show();
+?>
+
+2. ຟັງຊັນທີ່ມີການຮັບຄ່າເຂົ້າມາເຮັດວຽກ
+function ຊື່ຟັງຊັນ(parameter1,parameter2,......){
+	// ກຸ່ມຄໍາສັ່ງຕ່າງໆ
+	}
+ອາຄິວເມັນ ຄື ຕົວປ່ຽນ ຫຼຶ ຄ່າທີ່ຕ້ອງການສົ່ງມາໃຫ້ກັບຟັງຊັນ (ຕົວປ່ຽນ)
+ພາລາມິເຕີ ຄື ຕົວປ່ຽນທີ່ຟັງຊັນສ້າງໄວ້ສຳຫຼັບຄ່າທີ່ຈະສົ່ງມາໃຫ້ກັບຟັງຊັນ (ຕົວປ່ຽນຮັບ)
+	ການເອີນໃຫ້ຟັງຊັນ
+ຊື່ຟັງຊັນ (argumentl1,argumentl2,...);
+ຕົວຢ່າງ:
+<?php
+function show($message){
+    print("Hello = ".$message);
+}
+function add($a ,$b){
+    $c = $a + $b;
+    print($a ."+". $b . "=" . $c);
+}
+
+show("Saiyalad");
+add(10,20);
+?>
+
+3. ຟັງຊັນທີ່ມີສົ່ງຄ່າອອກມາ
+	function ຊື່ຟັງຊັນ(){
+		return ຄ່າທີ່ຈະສົ່ງອອກໄປ
+	}
+ຕົວຢ່າງ:
+<?php
+function getAddress(){
+    return "ປະເທດລາວ";
+
+}
+$mycity=getAddress();
+
+print("ທີ່ຢູ່ = ". $mycity);
+?>
+
+4. ຟັງຊັນທີ່ມີການຮັບຄ່າເຂົ້າມາ ແລະ ສົ່ງຄ່າອອກໄປ
+	function ຊື່ຟັງຊັນ (parameter1,parameter2,...){
+	retrun ຄ່າທີ່ຈະສົ່ງອອກໄປ
+	}
+ຕົວຢ່າງ 1:
+<?php
+function gettota($salary){
+    $year = 12;
+    return $salary * $year;
+
+}
+$amount = 15000;
+print("ເງືອນເດືອນ = " . $amount);
+print("<br>");
+$total = gettota($amount);
+    print("ລາຍໄດ້ຕໍ່ປີ = ". $total);
+?>
+
+ຕົວຢ່າງ 2 :
+<?php
+
+    function gettota($salary,$cont){
+        return $salary * $cont;
+    
+    }
+    $amount = 15000;
+    $month = 4;
+    print("ເງືອນເດືອນ = " . $amount);
+    print("<br>");
+    print ("ໄລຍະເວລາ". $month . "ເດືອນ");
+    $total = gettota($amount,$month);
+        print("ລາຍໄດ້ຕໍ່ປີ = ". $total);
+
+?>
+
+		ການສ້າງແບບກຳນົດຄ່າເລິ່ມຕົ້ນ
+	function ຊື່ຟັງຊັນ ($name = "Saiyalad",parameter2,...){
+	// ຄໍາສັ່ງຕ່າງໆ
+	}
+ຕົວຢ່າງ:
+<?php
+
+function showData($fname,$lname,$city = "ໄຊຍະບູລີ"){
+    print("ຊື່: ".$fname. "<br>");
+    print("ນາມສະກຸນ: ".$lname. "<br>");
+    print("ທີ່ຢູ່ : ".$city. "<br>");
+}
+
+showData("ໄຊຍະລາດ","ພຽນສອນ","ໄຊຍະບູລີ");
+showData("ຄຳພູວັນ","ແສນພະວົງ");
+
+?>
+
+		ຂອບເຂດຕົວປ່ຽນ
++ local variable ຕົວປ່ຽນທີ່ເຮັດວຽກຢູ່ໃນຟັງຊັນມີຂອບເຂດການເຮັດວຽກຕັ້ງແຕ່ຈຸດເລິ່ມຕົ້ນໄປຈົນເຖິ່ງຈຸດສິ້ນສຸດຂອງຟັງຊັນ
++ globle variable ຕົວປ່ຽນທີ່ເຮັດວຽກຢູ່ນອກຟັງຊັນມີຂອບເຂດການເຮັດວຽກຕັ້ງແຕ່ ຈຸດເລິ່ມຕົ້ນໄປຈົນເຖິງຈຸດສີ້ນສູດຂອງຟາຍທີ່ປະກາດໃຊ້
+
+		$GLLOBALS Key word
+	local variable ຕົວແປທີ່ເຮັດວຽກຢູ່ໃນຟັງຊັນ ມີຂວບເຂດການເຮັດວຽກຕັ້ງແຕ່ ຈຸດເລີ່ນຕົ້ນໄປຈົນເຖິງຈຸດສີ້ນສຸດຂອງຟັງຊັນ ຖ້າຢາກໃຫ້ເອີ້ນໃຊ້ງານໃນນອກຟັງຊັນໄດ້ ໃຫ້ໃສ່ $GLOBALS / globals ທາງໜ້າຕົວປ່ຽນ ເຊັ່ນ:
+	function showname(){
+	$GLOBALS["name"] = "Saiyalad";	ຫຼຶ
+	globals $name = "Saiyalad";
+	}
+	echo $name;
+
+ຕົວຢ່າງ:
+<?php
+// global
+$x = 500;
+$y = 10;
+
+function shownumber(){
+    global $x;
+    $GLOBALS ["z"] = 20000;
+    // local
+    print("ຕົວປ່ຽນ x =" .$x."<br>");
+    
+}
+shownumber();
+print("ຄ່າ x = ".$x."<br>");
+print("ຄ່າ z = ".$z."<br>");
+
+?>
+
+		ການເອີນໃຊ້ງານຕົວປ່ຽນ ແລະ ຟັງຊັນຈາກຟາຍດ້ານນອກ
+ຟັງຊັນ	- include()
+ການເຮັດວຽກ:	ຟັງຊັນສຳຫຼັບໂຫລດຟາຍເຂົ້າມາເຮັດວຽກ ໂດຍຈະເຮັດວຽກຕັ້ງແຕ່ເລິ້ມຕົ້ນຈົນຈົບໂປຮແກຣມ 	ຖ້າຫາຟາຍບໍ່ເຈີຈະແຈ້ງເຕືອນຂໍ້ຜິດພາດ (warning)ແລ້ວຂ້າມໄປເຮັດວຽກສ່ວນອື້ນໆ ຕໍ່
+
+- include_one()
+	ເຮັດວຽກຄືກັບຟັງຊັນ include ແຕ່ຈະເອີ້ນໃຊ້ງານຟາຍໄດ້ແຕ່ເທືອດຽວ
+- requira()
+	ຟັງຊັນສຳຫຼັບໂຫລດຟາຍເຂົ້າມາເຮັດວຽກ ໂດຍຈະເຮັດວຽກຕັ້ງແຕ່ເລິ່ມຕົ້ນຈົນຈົບໂປຣແກຣມ ຖ້າຫາຟາຍບໍ່ເຈີຈະແຈ້ງເຕືອນຂໍ້ຜິດພາດ ແລະ ຫຍຸດທຳງານໂປຮແກຣມ
+- requira_one()
+	ເຮັດວຽກຄືກັບຟັງຊັນ requira ແຕ່ຈະເອີ້ນໃຊ້ງານຟາຍແຕ່ຄັ້ງດຽວ 		
+
+ຕົວຢ່າງ:	
+ຟາຍ index.php:
+<?php
+    include "menu.php";
+
+    echo "Hello PHP<br>";
+    echo "Saiayald";
+
+    include "footer.php";
+
+    echo $company;
+
+    showData();
+?>
+
+ຟາຍ menu.php:
+<ul>
+    <li>Menu 1</li>
+    <li>Menu 2</li>
+    <li>Menu 3</li>
+</ul>
+
+ຟາຍ footer.php
+<?php
+$company = "Jay";
+
+$year = 2023;
+
+function showData(){
+    echo "ສະບາຍດີ";
+}
+?>
+
+<footer>
+    &copy;<?php echo $company ?><?php echo $year ?>
+</footer>
+
+
+			ອາເລ (Array)
+ຂໍ້ຈຳກັດຂອງຊະນິດຂໍ້ມູນພື້ນຖານ
+	ການປະກາດຕົວປ່ຽນແຕ່ລະເທືອ ຕົວປ່ຽນ 1 ຕົວສາມາດເກັບຂໍ້ມູນໄດ້ແຄ່ 1 ຄ່າເທົ່ານັ້ນ ເຊັ່ນ
+$number = 1;
+ຖ້າຢາກເກັບເລກ 10 ຄ່າຕ້ອງເຮັດແບບໃດ?
+ຕ້ອງປະກາດຕົວປ່ຽນ 10 ຕົວປ່ຽນ ຫຼຶ ບໍ່?
+	Array ຄືຫຍັງ
+ຄວາມໜາຍທີ່ 1 ຊຸດຂອງຕົວປ່ຽນທີ່ຢູ່ໃນຮູບລຳດັບໃຊ້ເກັບຄ່າຂໍ້ມູນໃຫ້ຢູ່ໃນກຸ່ມດຽວກັນ ຂໍ້ມູນພາຍໃນອາເລຈະຖຶກເກັບໃນໜ່ວຍຄວາມຈຳໃນຕຳແໜ່ງທີ່ຕໍ່ເນືອງກັນ ໂດຍຂະໜາດຂອງອາເລຈະນ້ອຍ ຫຼຶ ໃຫຍ່ຂື້ນກັບຈຳນວນມິຕິທີ່ກຳນົດຂື້ນ
+
+ຄວາມໜາຍທີ່ 2 ເປັນຕົວປ່ຽນທີ່ໃຊ້ໃນການເກັບຂໍ້ມູນທີ່ມີລຳດັບທີ່ຕໍ່ເນືອງ ຊຶ່ງຂໍ້ມູນມີຄ່າໄດ້ຫຼາຍຄ່າໂດຍໃຊ້ຊື່ອ້າງອີງໄດ້ພຽງຊື່ດຽວ ແລະ ໃຊ້ຫຼາຍເລກກຳກັບ (index) ໃຫ້ກັບຕົວປ່ຽນເພືອຈຳແນກຄວາມແຕກຕ່າງຂອງຄ່າຕົວປ່ຽນແຕ່ລະຕົວ
+
+		ໂຄງສ້າງຂອງ Array
+1. ຂໍ້ມູນທີ່ຢູ່ໃນອາເລຈະເອີ້ນວ່າສະມາຊິກ ຫຼຶ ອິລີເມັນ (element)
+2. ແຕ່ລະອິລິເມັນ (element) ຈະເກັບຄ່າຂໍ້ມູນ (value) ແລະ ອິນເດັກ (index) ເອົາໄວ້
+3. index ໜາຍເຖິງຄີຂອງອາເລໃຫ້ອ້າງອີງຕຳແໜ່ງຂອງ element
+4. index ເປັນໄດ້ທັ້ງຕົວເລກ ຫຼຶ ຕົວອັກສອນ (keys)
+5. ສະມາຊິກໃນ array ຕ້ອງມີຊະນິດຂໍ້ມູນຄືກັນ
+6. ສະມາຊິກໃນ array ຈະຖືກຄັ້ນດວ້ຍເຄືອງໜາຍ comma
+
+	ປະເພດຂອງ Array
+	1. Array ແບບດຽວ
+	2. Array ແບບຈັບຄູ່ (Associate)
+ຮູບແບບການສ້າງ Array
+1. ໃຊ້ຟັງຊັນ array
+2. ໃຊ້ຟັງຊັນ range
+3. ໃຊ້ສັນຍະລັກກ້າມປູ [ ]
+
+ຕົວຢ່າງການສ້າງ array ແບບດຽວ
+
+<?php
+// array ແບບດຽວ
+$number = array(10,20,30);
+$total = $number[0] + $number[1];
+
+
+print($number[1] . "<br>");
+print($number[0] . '<br>');
+echo "ຜົນບວກ" . $total . "<br>";
+print_r($number);
+//ແບບຕົວໜັງສື ແບບດຽວ
+
+$city = array("ໄຊຍະບຸລີ","ວຽງຈັນ","ນະຄອນຫຼວງ");
+print($city[0] . "<br>");
+print($city[1] . "<br>");
+print_r($city);
+
+?>
+
+		ການສ້າງ array ແບບຈັບຄູ່ (Associate)
+
+ມີການກຳນົດ index (key)
+
+- $pets = array("cat" => "ແມ່ວ","dog" => "ໜາ","rabbit" => "ກະຕ່າຍ")
+- $prvince = array("bangkok"=>36,"chonburi"=>11);
+- print_r($pets);
+
+ຕົວຢ່າງ:
+<?php
+    //ແບບຄູ່
+        $room = array("A01"=>"ໄຊຍະລາດ","A02"=>"ອູອີ","A03"=>"ທິບ");
+
+        print($room["A02"]);
+
+?>
+
+
+		ການສ້າງ Array  ໂດຍໃຊ້ຟັງຊັນ range
+	ໃຊ້ສ້າງ array ແບບລະບຸຊ່ວງຕົວເລກ ຫຼຶ ຕົວອັກສອນ ລຽງຈາກນ້ອຍໄປຫຼາຍ
+
+- range (start,stop,step);
+- $number = range(4,8); // ຂໍ້ມູນຢູ່ໃນຊ່ອງ 4-8
+- $number = range(0,20,5); // ຂໍ້ມູນຢູ່ໃນຊ່ອງ 0 -20 ຄ່າຄວາມຕ່າງຄື 5
+- $alphabet = range(A,F) // ຂໍ້ມູນຢູ່ໃນຊ່ວງ A - F
+- $alphabet = range(A,F,2) // ຂໍ້ມູນຢູ່ໃນຊ່ວງ A - F ຄ່າຄວາມຕ່າງຄື 2
+
+ຕົວຢ່າງ:
+<?php
+    $number = range(1,20);
+    $age = range(1,20,2);
+
+    print_r($number);
+    print_r($age);
+
+
+
+    $sitng = range("A","G");
+    $sitng2 = range("A","X",3);
+
+    print_r($sitng);
+    print_r($sitng2)
+?>
+		
+			ການສ້າງ ອາເລ ແບບ ສັນຍາລັກ [ ] 
+	ຈະເປັນວຽກຄືກັບອາເລທີ່ຜ່ານມາແຕ່ຈະເປັນການຫຍໍ້ຄຳສັ່ງລົງ ດວ້ຍການ ໃໍຊ້ [ ] ແທ່ນຄຳວ່າ array
+ຕົວຢ່າງ:
+<?php
+    //ແບບຄູ່
+        $room = ["A01"=>"ໄຊຍະລາດ","A02"=>"ອູອີ","A03"=>"ທິບ"];
+        $number = [10,20];
+
+        print($room["A02"]);
+        print_r($number);
+
+?>
+
+			ການເຂົ້າເຖິງສະມາຊິກໃນ Array ດວ້ຍ For loop
+
+- count($pets); ນັບຈຳນວນສະມາຊິກໃນ ອາເລ ໃຊ້ກັບ ອາເລ ທີ່ມີ index ເປັນຕົວເລກທີ່ລຽງລຳດັບຈາກນ້ອຍໄປຫຼາຍ
+- array_count_values($pets); ໃຊ້ນັບຄວາມຖີ່ຂອງຂໍ້ມູນໃນ array ທີ່ມີຄ່າຊ້ຳກັນ
+
+ຕົວຢ່າງ: 
+<?php
+    $color = ['ແດງ','ຟ້າ','ຂາວ','ສົ້ມ','ຂຽວ','ດຳ'];
+
+    $total = count($color); // ນັບຈຳນວນສະມາຊິກໃນອາເລ color
+    for($index = 0;$index<6;$index++){
+        print($index . " = " . $color[$index]. '<br>');
+    }
+
+
+    $colors = ['ແດງ','ຟ້າ','ຂາວ','ສົ້ມ','ຂຽວ','ດຳ','ແດງ','ດຳ'];
+
+    print_r(array_count_values($colors));
+
+?>
+
+			ການເຂົ້າເຖິງສະມາຊິກໃນ Array ດ້ວຍ While loop
+	ໃຊ້ຟັັງຊັນນ each ໃນການອ່ານຄ່າ array ທັ້ງຂໍ້ມູນ ແລະ ອິເດັກ
+ຕົວຢ່າງ:
+<?php
+    $colors = ["yellow"=>"ເຫຼຶອງ","red"=>"ແດງ","orange"=>"ສົ້ມ"];
+    $animals = ["dog"=>"ໜາ","cat"=>"ແມວ","pig"=>"ໝູ","rabbit"=>"ກະຕ່າຍ"];
+
+    while($item=each($animals)) {
+        print($item["key"]. "=>" . $item["value"] ."<br>");
+    }
+?>
+
+		ການເຂົ້າເຖິງສະມາຊິກດວ້ຍຟັງຊັນ list
+ໃຊ້ຟັງຊັນ list ໃນການອ່ານຄ່າ array ທັ້ງຂໍ້ມູນ ແລະ ອິເດັກ ແລະ ເກັບລົງໃນຕົວປ່ຽນ 2 ຕົວປ່ຽນໂດຍການເກັບແຍກເປັນຂໍ້ມູນ ແລະ ອິນເດັກລົງໃນຕົວປ່ຽນເລົ່ານັ້ນ
+	ຕົວຢ່າງ:
+<?php
+
+$colors = ["yellow"=>"ເຫຼຶອງ","red"=>"ແດງ","orange"=>"ສົ້ມ"];
+$animals = ["dog"=>"ໜາ","cat"=>"ແມວ","pig"=>"ໝູ","rabbit"=>"ກະຕ່າຍ"];
+
+while(list($key,$value)=each($animals)) {
+    print("key = " . $key . "valus = " . $value ."<br>");
+}
+?>
+
+		ການເຂົ້າເຖິງສະມາຊິກດວ້ຍ foreach ແບບທຳມະດາ
+foreach($array as $value)
+
+	statement
+
+$days = array("ອາທິດ","ວັນ","ອັງຄານ","ພຸດ","ພະຫັດ","ສຸກ","ເສົາ");
+foreach($days as $value) {
+	echo $value. "<br>";
+	}
+
+ຕົວຢ່າງ:
+<?php
+$citys = ["ໄຊຍະບຸລີ","ວຽງຈັນ","ນະຄອນຫຼວງ"];
+
+
+foreach($citys as $city) {
+    print($city. "<br>");
+}
+
+
+
+$room = ["A01"=>"ໄຊຍະລາດ","A02"=>"ອູອີ","A03"=>"ທິບ"];
+
+foreach($room as $key=>$value) {
+    print($key . " => " . $value . "<br>");
+}
+
+?>
+
+
+		Array  2 ມິຕິ
+- Array ທີ່ມີຂໍ້ມູນສະມາຊິກພາຍໃນເປັນ Array (array ຊ້ອນ array) ຄືກັນກັບ matrix
+- ມິໂຄ້ງສ້າງເປັນຮຸບແບບ ແຖວ (ແນວນອນ) ແລະ ຄໍລໍາ (ແນວຕັ້ງ)
+
+	ຮູບແບບ
+$products = array(
+	array("keyboard","ຄີບອດ",1500),
+	array("mouse","ເມົາ",900),
+	array("speaker","ລຳໂພງ",2500),
+	)
+
+ຕົວຢ່າງ:
+<?php
+// ແບບ 2 ມິຕິ
+        $products = array(
+            array("Keyboard","ຄິບອດ",900),
+            array("Mouse","ເມົາ",1900),
+            array("Table","ໂຕະ",2500)
+        );
+
+        // ການເຂົ້າເຖິງ => ແຖວ , ຄໍລຳ
+        print($products[0][0]);
+
+?>
+
+		ການເຂົ້າເຖິງ Array 2 ມິຕິ ດວ້ຍ for loop
+ຕົວຢ່າງ:
+<?php
+// ແບບ 2 ມິຕິ
+        $products = array(
+            array("Keyboard","ຄິບອດ",900),
+            array("Mouse","ເມົາ",1900),
+            array("Table","ໂຕະ",2500)
+        );
+
+        // ການເຂົ້າເຖິງ => ແຖວ , ຄໍລຳ
+            print($products[0][0] . "<br>");
+
+        // ການເຂົ້າເຖິງດວ້ຍ for loop
+        for($row = 0;$row < count($products);$row++) {
+            print("ແຖວທີ່ = " . $row . "<br>");
+            for($column = 0;$column < count($products[$row]);$column++) {
+                print($products[$row][$column] . "<br>");
+            }
+        }
+
+        //  ການເຂົ້າເຖິງ array 2 ມິຕິ ດວ້ຍການໃຊ້  for each
+
+        foreach($products as $product) {
+            print("ຊື່ສິຄ້າ (EH) = " . $product[0] . "<br>");
+            print("ຊື່ສິຄ້າ (HT) = " . $product[1] . "<br>");
+            print("ລາຄາ = " . $product[2] . "ບາດ" . "<br>");
+        }
+
+?>
+
+
+			ຟັງຊັນເພິ່ມ ແລະ ລົບ ສະມາຊິໃນ array
+- array_push()  ໃຊ້ເພິ່ມສະມາຊິກໃນຕຳແໜ່ງສຸດທ້າຍ
+- array_pop() ໃຊ້ລົບມາສະຊິກໃນຕຳແໜ່ງສຸດທ້າຍ
+- array_unshift() ໃຊ້ເພິ່ມສະມາຊິກໃນຕຳແໜ່ງທີ່ 1
+- array_shift() ໃຊ້ລົບສະມາຊິກໃນຕຳແໜ່ງທີ່ 1
+- array_splice() ໃຊ້ລົບ ແລະ ເພິ່ມສະມາຊິກໃນຕຳແໜ່ງທີ່ຕ້ອງການ
+	ຕົວຢ່າງ:
+<?php
+    $fruits = ["ໜາກແຕ່ງ","ໜາກນາວ","ສີດາ","ມັງກອນ","ໜາກລຳໄຍ","ໜາກລິນຈີ","ໜາກຂາມ"];
+
+    print_r($fruits);
+    print("<br>");
+    // ການເພິ່ມຕໍ່ທ້າຍ ຂອງ ອາເລ
+    array_push($fruits,"ໜາກມວ່ງ");
+    print_r($fruits);
+    print("<br>");
+
+    // ການລົບຕົວທ້າຍສຸດ
+    array_pop($fruits);
+    print_r($fruits);
+    print("<br>");
+    // ການສອງເທືອ
+    array_pop($fruits);
+    print_r($fruits);
+    print("<br>");
+
+    // ການເພິ່ມໄວ້ທາງໜ້າ
+    array_unshift($fruits,"ໜາກເກາະ");
+    print_r($fruits);
+    print("<br>");
+
+    // ການລົບຕົວທາງໜ້າສຸດ
+    array_shift($fruits);
+    print_r($fruits);
+    print("<br>");
+
+    // ການ ລົບ ຫຼຶ ເພິ່ມ ໃນຕຳແໜ່ງທີ່ຕ້ອງການ (ເປັນການແຊກເຂົ້າໄປ) ຮຸບແບບ array_splice(ຊື່ອາເລ,ຕຳແໜ່ງ index,ຈຳນວນທີ່ຕ້ອງການ)
+    print_r($fruits);
+    print("<br>");
+    // ແບບການລົບ
+    array_splice($fruits,1,6); // ເປັນການບອກໃຫ້ລົບຕັ້ງແຕ່ ຈຳແໜ່ງທີ່ 1 ຈົນຮອດ 6
+    print_r($fruits);
+    print("<br>");
+
+
+    //ແບບການເພິ່ມ
+    array_splice($fruits,1,6,array("ອາຄຸນ","ກວ້ຍ")); // ເປັນການບອກໃຫ້ລົບຕັ້ງແຕ່ ຕຳແໜ່ງທີ່ 1 ຈົນຮອດ 6 ແລະ ເພິ່ມ ອາຄຸນ ແລະ ໜາກ ກວ້ຍ ຕໍ່ຈາກຕຳແໜ່ງທີ່ 1
+    print_r($fruits);
+    print("<br>");
+
+?>
+
+
+
+			ຟັງຊັນລຽງລຳດັບ Array ແບບດຽວ
+- sort()   ລຽງຂໍ້ມູນເລກຈາກນ້ອຍໄປຫາຫຼາຍ
+- rsort() ລຽງຂໍ້ມູນເລກຈາກຫຼາຍໄປຫາໜ້ອຍ
+
+
+- sort()  ຖ້າເປັນຂໍ້ຄວາມຈະລຽງຈາກພະຍັນສະນະໄປສະຫຼະ
+- rsort() ຖ້າເປັນຂໍ້ຄວາມຈະລຽງຈາກສະຫຼະໄປພະຍັນສະນະ
+
+ຕົວຢ່າງ:
+<?php
+        $colors = ['ແດງ','ຟ້າ','ຂາວ','ສົ້ມ','ຂຽວ','ດຳ','ແດງ','ດຳ'];
+        $number = [1,22,14,23,5,6,66,12];
+
+
+        // ລຽງທີ່ເປັນຕົວເລກ
+        print_r($number);
+        print("<br>");
+
+        // ລຽງຈາກໜ້ອຍຫາຫຼາຍ ແບບ ຕົວເລກ
+        sort($number);
+        print_r($number);
+        print("<br>");
+
+        // ລຽງຈາກຫຼາຍ ຫາ ໜ້ອຍ ແບບ ຕົວເລກ
+        rsort($number);
+        print_r($number);
+        print("<br>");
+
+        // ລຽງເປັນຕົວໜັງສຶ
+        print_r($colors);
+        print("<br>");
+
+        // ລຽງຈາກໜ້ອຍຫາຫຼາຍ ແບບ ຕົວໜັງສຶ
+        sort($colors);
+        print_r($colors);
+        print("<br>");
+
+        // ລຽງຈາກຫຼາຍ ຫາ ໜ້ອຍ ແບບ ຕົວໜັງສຶ
+        rsort($colors);
+        print_r($colors);
+        print("<br>");
+
+?>
+
+
+		ຟັງຊັນລຽງລຳດັບ array ແບບຄູ່
+- asort() ລຽງຂໍ້ມູນຈາກ ໜ້ອຍ ຫາ ຫຼາຍ
+- arsort() ລຽງຂໍ້ມູນຈາກ ຫຼາຍ ຫາ ໜ້ອຍ
+- ksort() ລຽງ index ຈາກ ໜ້ອຍ ຫາ ຫຼາຍ
+- krsort() ລຽງ index ຈາກ ຫຼາຍ ຫາ ໜ້ອຍ
+
+ຕົວຢ່າງ:
+<?php
+    // array ແບບຄູ່
+    $arr =["A"=>20,"B"=>15,"C"=>30,"D"=>25];
+    $country = ["LAO"=>"ລາວ","TH"=>"ໄທ","JP"=>"ຍີປຸ່ນ","US"=>"ສະຫາລັດ"];
+
+    //ລຽງຂໍ້ມູນ 
+    print_r($arr);
+    print("<br>");
+    // ແບບ ໜ້ອຍ ຫາ ຫຼາຍ
+    asort($arr);
+    print_r($arr);
+    print("<br>");
+    // ແບບ ຫຼາຍ ຫາ ໜ້ອຍ
+    arsort($arr);
+    print_r($arr);
+    print("<br>");
+
+    print("<hr>");
+
+    //ລຽງ index ສິ່ງທີ່ຢູ່ໃນ [ ]
+
+    print_r($arr);
+    print("<br>");
+    // ແບບ ໜ້ອຍ ຫາ ຫຼາຍ
+    ksort($arr);
+    print_r($arr);
+    print("<br>");
+        // ແບບ ຫຼາຍ ຫາ ໜ້ອຍ
+        krsort($arr);
+        print_r($arr);
+        print("<br>");
+
+?>
+
+			ຟັງສະລັບຄ່າໃນ array
+- shuffle()	ສຸ່ມສະລັບຄ່າຂໍ້ມູນ ໂດຍຟັງຊັນຈະກຳນົດຄ່າ index ໃຫມ່ ແລະ ເກັບລົງໃນຕົວປ່ຽນ array ເກົ່າ
+- array_reverse()	ຄັດລອກ array ໄປໄວ້ໃນ array ໃຫມ່ພ້ອມລຽງລຳດັບແບບຍ້ອນກັບ (reverse)
+
+		ຕົວຢ່າງ:
+<?php
+        $country = ["LAO"=>"ລາວ","TH"=>"ໄທ","JP"=>"ຍີປຸ່ນ","US"=>"ສະຫາລັດ"];
+        // ແບບ shuffle
+        print_r($country); // ກອ່ນ
+        shuffle($country); // ສະລັບຄ່າ
+        print("<br>");
+        print_r($country); // ຜົນການສະລັບ
+        print("<br>");
+
+
+        // ແບບ 
+        $number=range(1,10);
+        print_r($number);
+        print("<br>");
+
+        $new_number = array_reverse($number);
+        print_r($new_number);
+
+
+?>
+
+
+
+					ຟັງຊັນກຽ່ວກັບ index ແລະ value
+- array_keys()	ດືງ index ທັງໝົດຂອງ array
+- array_values() ດືງ value ທັັງໝົດຂອງ array
+- array_flip()	ສະລັບ index ກັບ value
+- array_unique() ລົບຄ່າຂໍ້ມູນຊ້ຳໃນ array
+ຕົວຢ່າງ:
+<?php
+// ແບບດຽວ
+    $number = [10,20,15,20,30,10,20];
+    // ແບບຄູ່
+$room = array("A01"=>"ໄຊຍະລາດ","A02"=>"ອູອີ","A03"=>"ບຶງ");
+
+$room_keys = array_keys($room);// ເອົາແຕ່ສະເພາະຄີ (key)
+print_r($room_keys);
+print("<br>");
+
+$room_value = array_values($room); // ເປັນການແຕ່ສະເພາະ value
+print_r($room_value);
+print("<br>");
+
+
+$flip = array_flip($room); // ເປັນການສະລັບ index ເປັນ value ແລະ value ເປັນ index
+print_r($flip);
+print("<br>");
+
+// ເປັນການລົບ ຂໍ້ມູນທີ່ຢູ່ໃນ array ທີ່ມັນຊ້ຳກັນ ຫຼຶ ກອງຕົວທີ່ມັນຊ້ຳກັນ ອອກໄປ ແລ້ວເອົາມາແຄ່ຄ່າດຽວ
+print_r($number); // ຄ່າທີ່ຍັງບໍ່ໄດ້ໃຊ້ການ unique
+print("<br>");
+$unique = array_unique($number);
+print_r($unique);
+print("<br>");
+?>
+
+
+				ຟັງຊັນການຄົ້ນຫາຂໍ້ມູນໃນ Array
+- array_key_exists()	ກວດສວບວ່າມີ index ນີ້ໃນ Array ຫຼຶບໍ?
+- in_array()		ກວດສວບວ່າມີ value ນີ້ໃນ Array ຫຼຶບໍ?
+ດວ້ຍຈະຕອບກັບ ມາເປັນຄ່າ ທູ ແລະ ຟໍ
+
+ຕົວຢ່າງ:
+<?php
+// ແບບດຽວ
+$number = [10,20,15,20,30,10,20];
+// ແບບຄູ່
+$room = array("A01"=>"ໄຊຍະລາດ","A02"=>"ອູອີ","A03"=>"ບຶງ");
+
+//  ການຄົ້ນຫາ key
+if(array_key_exists("A01",$room)) {
+    print("ເຈີ key ທີ່ຕ້ອງການ <br>");
+} else {
+    print("ຄົ້ນຫາບໍ່ເຈີ <br>");
+}
+
+// ການຄົ້ນຫາ value
+
+if (in_array("ໄຊຍະລາດ",$room)) {
+    print("ເຈີ value ທີ່ຕ້ອງການ");
+} else {
+    print("ຄົ້ນຫາບໍ່ເຈີ");
+}
+
+
+?>
+
+			ຟັງຊັນສຳລັບການຮວ່ມ Array
+- array_merge()	ຮວ່ມ Array ຫາກມີ index ທີ່ຊ້ຳກັນຈະນຳຄ່າຂໍ້ມູນ Array ຊຸດຫຼັງມາຕໍ່ທ້າຍຂໍ້ມູນ Array ຊຸດແລກ
+- array_merge_recursive()	ຮວ່ມ Array ຫາກມີ index ທີ່ຊ້ຳກັນຈະນຳຄ່າຂໍ້ມູນ Array ຊຸດຫລັງມາຕໍ່ທ້າຍຂໍ້ມູນ Array ຊຸດແລກ
+- array_combine()	ຮ່ວມ Array ໂດຍໃຊ້ Array ຕົວແລກເປັນ index ແລະ ໃຊ້ Array ຕົວທີ່ສອງເປັນ Value
+
+	ຕົວຢ່າງ:
+<?php
+    $arr1 = ["product"=>"ໂຕະ","collor"=>"ສີສົ້ມ","price"=>500];
+
+    $arr2 = ["discount"=>100,"delivery"=>30,"price"=>2000];
+
+    // ເປັນການເອົາອາເລ ທັງສອງມາລວ່ມກັນ ຖ້າເຈີ key ທີ່ຊ້ຳກັນມັນຈະເອົາ key ຕົວທີ່ສອງແທນທີ່ ຕົວທີ່ 1
+    $result = array_merge($arr1,$arr2);
+    print_r($result);
+    print("<br>");
+
+    //ເປັນການເອົາອາເລ ທັງສອງມາລວ່ມກັນ ຖ້າມີ key ທີ່ຊ້ຳກັນ ຈະເອົາມາຕໍ່ທ້າຍບ່ອນທີ່ມັນຊ້ຳກັນ ແລ້ວຈະແລ້ວເອົາຈັດຢູ່ກູ່ມດຽວກັນ ຈະບໍ່ແທນທີ່ຄືກັບແບບທີ່ໜຶງ
+    $result2 = array_merge_recursive($arr1,$arr2);
+    print_r($result2);
+    print("<br>");
+
+
+    // ການສ້າງເອລາ ດຽວ ສອງອັນໃຫ້ເປັນ ອາເລ ແບບ ຄູ່
+    $array1 = ["dog","cat","pig","ant"];
+    $array2 = ["ໜາ","ແມວ","ໝູ","ມົດ"];
+    $room = array_combine($array1,$array2); //ຕົວທີ່ 1 ຈະເປັນ key ຕົວທີ່ 2 ຈະເປັນ value
+    print_r($room);
+    print("<br>");
+?> 
+
+
+
+======================================================================================================
+
+
+ພາກ 2 ການເຮັດວຽກກ່ຽວກັບ String
+	String ຄືຊຸດຂອງຕົວປ່ຽນ ຊິ່ງເກີດຈາກການຮວ່ມຕົວອັກສອນຫຼາຍຕົວໃນ PHP ໂດຍໃນຫົວຂໍ້ນີ້ຈະມາເຮັດຄວາມຮູ້ຈັກກັບຟັງຊັນທີ່ຈັດການ String ໃນ PHP ເຊັ່ນ ຫາຄວາມຍາວຂອງຂໍ້ຄວາມ  ການປ່ຽບທ່ຽບຂໍ້ຄວາມ ເປັນຕົ້ນ.
+
+ການສະແດງຜົນ String
+	- echo (void echo) ຄືຟັງຊັນທີ່ສະແດງຜົນຂໍ້ຄວາມກຳນົດ String ຈັກຕົວກໍໄດ້ ເຊັ່ນ echo $str1,$str2 ເປັນຕົ້ນ.
+	- print( ) ຟັງຊັນທີ່ສະແດງຜົນຂໍ້ຄວາມກຳນົດ String ໄດ້ຕົວດຽວ.
+
+ຕົວຢ່າງ:
+<?php
+$str1 = "jay";
+$str2 = "Love php";
+
+echo $str1,$str2;
+
+print($str1);
+print($str2);
+
+// print($str1,$str2); ບໍ່ມາດສາດສະແດງໄດ້
+
+?>
+
+		ຟັງຊັນປ່ຽບທ່ຽບ String
+ຊື່ຟັງຊັນ				ການເຮັດວຽກ								ຜົນລັບ
+strcmp( )			ປ່ຽບທ່ຽບຄວາມສຳຄັນຂອງ String ຕົວພິມໃຫຍ່ຈະມີຄ່າຫຼາຍກວ່າຕົວພິມນ້ອຍ		ເທົ່າກັນ 2 ຄ່າ = 0
+													str 1<str2 = < 0
+													str 1>str2 = > 0
+strcasecmp( )			ຄືກັບ strcmp( ) ແຕ່ຕົວພິມໃຫຍ່ຈະມີຄ່າເທົ່າກັບຕົວພິມນ້ອຍ				ເທົ່າກັນ 2 ຄ່າ = 0
+													str1<str2 = ນ້ອຍກວ່າ 0
+													str1>str2 = ຫຼາຍກວ່າ 0
+strspn( )			ຫາຈຳນວນຕົວອັກສອນໃນ str1 ທີ່ພົບໃນ str2 ຖ້າຄືກັນຈະຄົ້ນຫາຕົວຕໍ່ໄປຈົນກວ່າຈະບໍ່ເຈີ	ຈຳນວນຕົວອັກສອນທີ່ພົບ
+strcspn( )			ຫາຈຳນວນຕົວອັກສອນໃນ str1 ທີ່ບໍ່ພົບໃນ str2					ຈຳນວນຕົວອັກສອນທີ່ບໍ່ພົບ
+
+ຕົວຢ່າງ:
+<?php
+$str1 = "saiyalad";
+$str2 = "SAIyalad";
+
+// ການໃຊ້ strcmp
+$result = strcmp($str1,$str2);
+
+echo $result;
+
+if ($result != 0){
+    echo "ທັ່ງສອງບໍ່ເປັນຕົວພິມໃຫຍ່ຄືກັນ<br>";
+} else{
+    echo "ທັ້ງສອງເປັນຕົວພິມໃຫຍ່ຄືກັນກັນ<br>";
+}
+
+//ການໃຊ້ strcasecmp
+$result1 = strcasecmp($str1,$str2);
+
+echo $result1;
+
+if ($result1 != 0){
+    echo "ທັ່ງສອງບໍ່ເປັນຕົວພິມໃຫຍ່ຄືກັນ<br>";
+} else{
+    echo "ທັ້ງສອງເປັນຕົວພິມໃຫຍ່ຄືກັນກັນ<br>";
+}
+
+// ການໃຊ້ strspn
+
+$resul2 = strspn($str1,$str2);
+
+echo "ຈຳນວນທີ່ພົບ" . $resul2 . "<br>";
+
+// ການໃຊ້ strcspn
+
+$resul3 = strcspn($str1,$str2);
+
+echo "ຈຳນວນທີ່ບໍ່ພົບ" . $resul3;
+
+		ການຫາຄວາມຍາວຂອງ String
+	strlen(string);
+ຕົວຢ່າງ:
+<?php
+$str1 = "saiyalad";
+
+// ການຊອກຫາຄວາມຍາວຂອງຂໍ້ຄວາມໃນ str1 ຈະນັບຊອງວ່າງນຳ
+
+$count = strlen($str1);
+
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມ" . $count;
+?>
+
+			ການຕັດຊ່ວງວ່າງຂອງ String
+
+ຊື່ຟັງຊັນ				ການເຮັດວຽກ
+trim( )				ຕັດຊວ່ງວ່າງຊ້າຍ - ຂວາ ຂອງຂໍ້ຄວາມ
+ltrim( )				ຕັດຊ່ວງວ່າງດ້ານຊາຍມຶ
+rtrim( )				ຕັດຊ່ວງວ່າງດ້ານຂວາມຶ
+
+ຕົວຢ່າງ:
+<?php
+$str1 = "  saiyalad";
+
+echo $str1;
+echo "<hr>";
+$count = strlen($str1); // ບອກຄວາມຍາວຂໍ້ຄວາມ
+
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມທີ່ຍັງບໍ່ໄດ້ຕັດຊວງວ່າງອອກ" . $count;
+echo "<hr>";
+
+
+// ການໃຊ້ trim
+$result = trim($str1);// ການຕັດຊອງວ່າງ ຊາຍ-ຂວາ
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມຕັດຊາຍຂວາ" . $result . "<br>";
+$count1 =  strlen($result); // ບອກຄວາມຍາວຂໍ້ຄວາມ
+
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມ" . $count1;
+echo "<hr>";
+
+// ການນຳໃຊ້  ltrim
+$result = ltrim($str1);// ການຕັດຊອງວ່າງຊາຍ
+echo "ຄວາມຂໍ້ຄວາມຊວງວ່າງຂອງຂໍ້ຄວາມທາງຊາຍ" . $result . "<br>";
+$count1 =  strlen($result); // ບອກຄວາມຍາວຂໍ້ຄວາມ
+
+echo "ຄວາມຂອງຂໍ້ຄວາມຊວງວ່າງ" . $count1;
+echo "<br>";
+
+// ການນຳໃຊ້ rtrim
+$result = rtrim($str1); // ການຕັດຊວງວ່າງຂວາ
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມຕັດຂວາມຶ" . $result . "<br>";
+$count1 =  strlen($result); // ບອກຄວາມຍາວຂໍ້ຄວາມ
+
+echo "ຄວາມຍາວຂອງຂໍ້ຄວາມ" . $count1;
+echo "<br>";
+
+?>
+
+			ການປ່ຽນຮູບແບບຕົວອັກສອນ
+strtolower( )		ປ່ຽນຕົວອັກສອນທຸກຕົວເປັນຕົວພິມນ້ອຍ
+strtoupper( )		ປ່ຽນຕົວອັກສອນທຸກຕົວເປັນຕົວພິມໃຫຍ່
+ucwords( )		ປ່ຽນຕົວອັກສອນຕົວແລກຂອງແຕ່ລະຄຳເປັນຕົວພິມໃຫຍ່
+ucfirst( ) 		ປ່ຽນຕົວອັກສອນຕົວແລກຂອງຂໍ້ຄວາມເປັນຕົວພິມໃຫຍ່
+ຕົວຢ່າງ:
+<?php
+
+
+$str1 = "hello world I Love Php";
+
+// ການນຳໃຊ້ strtolower
+$lower = strtolower($str1);
+echo $lower . "<br>";
+
+// ການນຳໃຊ້ strtoupper
+$upper = strtoupper($str1);
+echo $upper . "<br>";
+
+// ການນຳໃຊ້ ucwords
+$ucwords = ucwords($str1);
+echo $ucwords . "<br>";
+
+// ການນຳໃຊ້ ucfirst
+$ucfirst = ucfirst($str1);
+echo $ucfirst . "<br>";
+
+?>
+
+				ການຮວ່ມ ແລະ ການແຍກ String
+implode( )		ຮວ່ມ String ເຂົ້າດວ້ຍກັນໂດຍກຳນົດອັກສອນພິເສດສຳລັບຮ່ວມ String
+explode( )		ແຍກ String ໂດຍໃຊ້ຕົວອັກສອນພິເສດເປັນຕົວແບ່ງ ແລະ ແຍກເກັບໃນຮູບແບບ  Array
+substr( )		ໃຊ້ຕັດຕົວອັກສອນທີ່ບໍ່ຕ້ອງການອອກຈາກ String ໂດຍການລະບຸຕຳແໜ່ງ
+str_split( )		ໃຊ້ແຍກ String ຕາມຄວາມຍາວທີ່ກຳນົດ (Default = 1) ແລະແຍກເກັບໃນຮູບແບບຂອງ Array
+ຕົວຢ່າງ:
+<?php
+
+
+// ການນຳໃຊ້ implode
+$arr = array("Helo","World","I","Love","PHP");
+$str = implode("-",$arr);// ຮ່ວມ string ໂດຍແຍກຂໍ້ຄວາມໂດຍ -  ໃຊ້ join ແທ່ນ implode ກໍຄືກັນ (ແປງອາເລເປັນສະຕິງ)
+echo $str . "<br>";
+
+// ການນຳໃຊ້ explode
+$str1 = "Saiyalad:19:laos";
+$arr1 = explode(":",$str1); // ເປັນການນຳເອົາ string ມາເປັນ array ມີສັນຍາລັກ : ມາເປັນຕົວແບ່ງ
+
+print_r($arr1);
+echo "ຊື່: " . $arr1[0];
+print("<br>");
+
+// ການນຳໃຊ້ substr
+$txt = "saiyalad";
+
+echo $txt[0] . "<br>"; // ເປັນການເລືອກກຸ່ມສະເພາະຕົວອັກສອນທີ່ຢູ່ໃນ String
+echo substr($txt,3) . "<br>"; //ເປັນການສັ່ງຕັດຕັ້ງແຕ່ຕົວທີ່ 1 ຮອດ 3 ໄທແລ້ວໃຫ້ເອົົາມາສະແດງ
+echo substr($txt,3,3) . "<br>"; //ເປັນການສັ່ງຕັດຕັ້ງແຕ່ຕົວທີ່ 3 ແລ້ວ  ສະແດງ 3 ຕົວແລ້ວໃຫ້ເອົົາມາສະແດງ
+
+// ການນຳໃຊ້ str_split
+$txt2 = "saiyaladps";
+$arr2 = str_split($txt2,4); // ຕ້ອງການແບ່ງ ຢ່າງລະ 4 ຕົວອັກສອນ
+print_r($arr2);
+?>
+				
+
+				ການຄົ້ນຫາຕົວອັກສອນໃນ String
+strstr( )		ຄົ້ນຫາຕົວອັກສອນ ຫຼຶ String ຍ່ອຍ ຕົວພິມນ້ອຍ - ຕົວພິມໃຫຍ່ຈະມີຄວາມໜາຍທີ່ແຕກຕ່າງກັນ
+stristr( )		ຄົ້ນຫາຕົວອັກສອນ ຫຼຶ String ຍ່ອຍ ຕົວພິມນ້ອຍ - ຕົວພິມໃຫຍ່ຈະມີຄວາມໜາຍທີ່ຄືກັນ
+
+ຕົວຢ່າງ:
+<?php
+$str = "Hello PHP I Love PHP";
+
+// ການນຳໃຊ້ strstr
+$result = strstr($str,"hello");
+if($result){
+    print("ຫາຂໍ້ຄວາມເຈີ<br>");
+} else{
+    print("ຫາຂໍ້ຄວາມບໍ່ເຈີ<br>");
+}
+
+// ການນຳໃຊ້ stristr
+$result1 = stristr($str,"hello");
+if($result1){
+    print("ຫາຂໍ້ຄວາມເຈີ<br>");
+} else{
+    print("ຫາຂໍ້ຄວາມບໍ່ເຈີ<br>");
+}
+
+?>
+
+			ການປ່ຽນຄ່າ String
+str_replace( )		ປ່ຽນ string ຍ່ອຍທີ່ພົບເປັນ string ຍ່ອຍໃຫມ່
+strrev( )			ກັບຄ່າ string (reversing string)
+str_repeat( )		ການເຮັດຊ້ຳ string
+
+ຕົວຢ່າງ:
+<?php
+$str = "Hello PHP , Hello JavaScript";
+
+// ການນຳໃຊ້ str_replace
+$newstr = str_replace("Hello","ສະບາຍ",$str);
+echo $newstr . "<br>";
+
+// ການນຳໃຊ້ strrev
+$str1 = "Hello";
+$newstr1 = strrev($str1);
+echo $newstr1 . "<br>";
+
+// ການນຳໃຊ້ str_repeat
+$newstr2 = str_repeat($str1,5);
+echo $newstr2;
+
+?>
+
+				ການເຂົ້າ ແລະ ການຖອດລະຫັດ String
+md5( ) / sha1( )			ເຂົ້າລະຫັດໂດຍຄຳນວນ String ແລະ ສົ່ງຄ່າ hash ກັບມາ
+crypt( )				ເຂົ້າລະຫັດໂດຍສຸ່ມເວລາມາເຮັດວຽກຮວ່ມນຳ
+base64_encode( )		ເຂົ້າລະຫັດ string ດ້ວຍ base_64
+base64_decode( )		ຖອດລະຫັດ string ດ້ວຍ base_64
+ຕົວຢ່າງ:
+<?php
+
+$pass = "Saiyalad96778932";
+
+echo "ລະຫັດ" . $pass . "<br>";
+
+$result = md5($pass); // ເປັນການເຂົ້າລະຫັດແບບ md5
+echo "md5 = " . $result . "<br>";
+
+$result = sha1($pass); // ເປັນການເຂົ້າລະຫັດແບບ sha1
+echo "sha1 = " . $result . "<br>";
+
+$result = crypt($pass,"kod");//ເປັນການເຂົ້າລະຫັດແບບ crupt ທີ່ມີເວລາເຂົ້າມາກ່ຽວ
+echo "crypt = " . $result . "<br>";
+
+$encode = base64_encode($pass);// ເປັນການເຂົ້າລະຫັດ ເຮັດວຽກສຳພັນກັບ base64_decode
+echo "base64_encode = " . $encode . "<br>";
+
+$result = base64_decode($encode);// ເປັນການແກ້ລະຫັດຈາກ base64_encode
+echo "bases64_decode = " . $result . "<br>";
+?>
+
+				ຕົວຈັດການຕົວເລກ (ປັດເສດທົດສະນິຍົມ)
+ceil( )		ປັດເສດທົດສະນິຍົມຂື້ນທຸກກໍລະນີ້
+floor( )		ປັດເສດທົດສະນິຍົມຖິ້ມທຸກກໍລະນີ້ ຄືນຄ່າເປັນຈຳນວນເຕັມ ແບບ floor
+round( )		ປັດເສດທົດສະນິຍົມ >= 5 ເປັນຕົ້ນໄປປັດເສດຂື້ນຖ້າ <5 ໃຫ້ປັດລົົງ
+ຕົວຢ່າງ:
+<?php
+$number = 100.34;
+
+
+echo $number;
+echo "<br>";
+
+// ການນຳໃຊ້ ceil
+$result = ceil($number);
+echo $result . "<br>";
+
+// ການນຳໃຊ້ floor
+$result = floor($number);
+echo $result . "<br>";
+// ການນຳໃຊ້ round
+$result = round($number);// ຖ້າວ່າ .5 ຂື້ນໄປໃຫ້ເພິມຂື້ນເຕັມ ຖ້າໜ້ອຍກວ່າໃຫ້ລົງເປັນຈຳນວນເຕັມ
+echo $result . "<br>";
+?>
+
+					ການຈັດຮຸບແບບຕົວເລກ
+number_format( )		ການຈັດຮຸບແບບການສະແດງຜົນຕົວເລກ ເຊັ່ນ $number = 35000
+
+number_format($number)// 35,000
+number_format($number,2) // 35,000.00
+
+ຕົວຢ່າງ:
+<?php
+
+$number = 350000.45;
+echo $number . "<br>";
+
+
+$result = number_format($number,1);
+echo $result . "<br>";
+?>
+
+				ການຈັດການກ່ຽບກັບວັນທີ່ ແລະ ເວລາ
+time( )		ສະແດງວັນທີ່ ແລະ ເວລາ ປັດຈຸບັນໃນຮູບແບບ Unix Timestamp ສະແດງເປັນໜ່ວຍວິນາທີ່
+date( )		ສະແດງວັນທີ່ ແລະ ເວລາ ໂດຍການກຳນົດຮູບແບບລົງໃນຟັງຊັນຜ່ານພາລາມີເຕີ
+
+		ຮຸບແບບວັນທີ່ ແລະ ເວລາ
+ພາລາມີເລີ
+d/j		d = ວັນທີ່ 2 ຫລັກ (01-31)
+		j = ວັນທີ່ 1 ຫລັກ (1 - 31)
+D/L		D = ສະແດງວັນແບບຕົວຍໍ້ 3 ຕົວອັກສອນ (sun , mon)
+		L = ສະແດງວັນແບບເຕັມ
+W		ສະແດງລຳດັບສັບດາຂອງ ປີ 0 -52
+		( 1 ປີມີ 53 ອາທິດ
+F/M		F = ສະແດງຊື່ເດືອນແບບເຕັມ
+		M = ສະແດງຊື່ເດືອນແບບຍໍ້ 3 ຕົວອັກສອນ
+m/n		m = ສະແດງຊື່ເດືອນດວ້ຍຕົວເລກ 2 ຫລັກ (01-12)
+		n = ສະແດງຊື່ເດືອນດວ້ຍຕົວເລກ 1 ຫລັກ (1-12)
+t		ສະແດງຈຳນວນວັນຂອງເດືອນ ເຊັນ 28 - 31
+g/h		g = ສະແດງຊົ່ວໂມງໃນຮູບແບບຂອງ 12 ຊົ່ວໂມງ (1-12)
+		h = ສະແດງຊົ່ວໂມງໃນຮູບແບບຂອງ 12 ຊົ່ວໂມງ (01 - 12)
+G\H		G = ສະແດງຊົ່ວໂມງໃນຮູບແບບຂອງ 24 ຊົ່ວໂມງ (0-23)
+		H = ສະແດງຊົ່ວໂມງໃນຮູບແບບຂອງ 24 ຊົ່ວໂມງ (00-23)
+i/s		i = ສະແດງນາທີ່
+		s = ສະແດງວິນາທີ
+c		ວັນທີ່ ແລະ ເວລາແບບຕາມມາດຕະຖານ ISO-8601
+r		ຮຸບແບບວັນທີ່ໃນອີເມວ RFC 2822
+
+ຕົວຢ່າງ:
+<?php
+date_default_timezone_set("Asia/Bangkok");
+echo date("r");
+
+echo "<br>";
+
+echo date("D");
+echo "<br>";
+
+echo date("j F Y");
+echo "<br>";
+
+echo date("G:i:s A");
+echo "<br>";
+
+echo date("d/m/y");
+?>
+
+		ການໃຊ້ time ໃນການຄຳນວນເວລາ
+ຕົວຢ່າງ:
+<?php
+date_default_timezone_set("Asia/Bangkok");
+echo time();
+
+echo "<br>";
+echo "ວັນປັດຈຸບັນ" . date("d/m/y" ,time());
+echo "<br>";
+$days3 = time()+(60*60*24*3);
+echo "3ວັນທາງໜ້າຄືວັນ" . date("d/m/y",$days3);
+echo "<br>";
+
+$week = time()+(60*60*24*7);
+echo "1 ທິອາທາງໜ້າຄືວັນທີ່" . date("d/m/y",$week);
+echo "<br>";
+
+?>
+
+
+				ການນຳໃຊ້ getdate( )
+hours/minutes/second		ຊົ່ວໂມງ / ນາທີ່ / ວິນາທີ
+mday / wday / mon / year / yday		ວັນທີ່ / ວັນໃນແຕ່ລະອາທິດ / ຊື່ເດືອນ / ປີ / ວັນໃນແຕ່ລະປີເປັນຕົວເລກ
+weekday / month		ຊື່ວັນໃນແຕ່ລະອາທິດ / ຊື່ເດືອນແບບເຕັມ
+
+ຕົວຢ່າງ:
+<?php
+date_default_timezone_set("Asia/Bangkok");
+print_r(getdate());
+echo "<br>";
+
+$date_time = getdate();
+
+echo "ວັນທີ່ = " . $date_time["mday"] . "<br>";
+echo "ເດືອນ = " . $date_time["month"] . "<br>";
+echo "ປີ = " . $date_time["year"] . "<br>";
+echo "ຊົ່ວໂມງ = " . $date_time["hours"] . "<br>";
+echo "ນາທີ່ = " . $date_time["minutes"] . "<br>";
+echo "ວິນາທີ່ = " . $date_time["seconds"] . "<br>";
+
+?>
+
+		checkdate() - ກວດສວບຄວາມຖືກຕ້ອງຂອງວັນທີ່
+int month/day/year		ເດືອນ / ວັນທີ່ / ປີ
+
+// bool checkdate(int  month,int day,ing year)
+
+ຈົບການຮຽນ PHP ເບືອງຕົ້ນ
